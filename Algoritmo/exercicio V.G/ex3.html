@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 09 - Questão 03</title>
+</head>
+<body>
+    <span style="color: blue;">
+        Total guardado no cofrinho: <span id="span_valor_depositado"><u>R$0</u></span><br>
+        Depósitos efetuados: <span id="span_depositos"><u>0</u></span><br>
+        Retiradas efetuadas: <span id="span_retiradas"><u>0</u></span><br>
+    </span>
+
+    <br>
+
+    <button onclick="depositar050()">Depositar R$0,50</button>
+    <button onclick="depositar2()">Depositar R$2,00</button>
+    <button onclick="retirar050()">Retirar R$0,50</button>
+
+    <br><br>
+
+    Digite um valor a ser retirado no cofrinho:<br>
+    <input type="number" id="input_valor_retirar">
+    <button onclick="retirarValor()">Retirar</button>
+
+    <div id="div_mensagem"></div>
+    
+</body>
+</html>
+
+<script>
+    var valorDepositado = 0;
+    var depositos = 0;
+    var retiradas = 0;
+
+    function depositar050() {
+        valorDepositado += 0.50;
+        depositos++;
+        span_valor_depositado.innerHTML = `R$${valorDepositado};`;        
+        span_depositos.innerHTML = `${depositos}`;
+    }
+
+    function depositar2() {
+        valorDepositado += 2;
+        depositos++;
+        span_valor_depositado.innerHTML = `R$${valorDepositado};`;
+        span_depositos.innerHTML = `${depositos}`;
+    }
+
+    function retirar050() {
+        valorDepositado -= 0.5;
+        retiradas++;
+        span_valor_depositado.innerHTML = `R$${valorDepositado}`;
+        span_retiradas.innerHTML = `${retiradas}`;
+    }
+
+    function retirarValor() {
+        valorDepositado -= Number(input_valor_retirar.value);
+        retiradas++;
+        span_valor_depositado.innerHTML = `R$${valorDepositado};`;
+        span_retiradas.innerHTML = `${retiradas}`;
+    }
+</script>

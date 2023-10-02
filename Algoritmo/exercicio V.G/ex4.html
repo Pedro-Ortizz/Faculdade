@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 09 - Questão 04</title>
+</head>
+<body>
+    <button onclick="moverDireita()">Mover p/ direita</button>
+    <button onclick="moverEsquerda()">Mover p/ esquerda</button>
+
+    Quantos pixels: <input type="number" id="input_qtd_pixels"><br>
+
+    <div id="div_imagem" style="width: 190px;"><img style="width: 100%;" src="https://w7.pngwing.com/pngs/813/478/png-transparent-bart-simpson-illustration-bart-simpson-homer-simpson-lisa-simpson-skateboard-cartoon-vehicle-sports.png" alt="Imagem do Bart rodando Skate"></div>
+</body>
+</html>
+
+<script>
+    var qtdPixels = 0;
+
+    function moverDireita() {
+        qtdPixels += Number(input_qtd_pixels.value);
+        div_imagem.style.marginLeft = `${qtdPixels}px`;
+        div_imagem.style.transform = `scaleX(-1)`;
+    }
+
+    function moverEsquerda() {
+        qtdPixels -= Number(input_qtd_pixels.value);
+        div_imagem.style.marginLeft = `${qtdPixels}px`; 
+        div_imagem.style.transform = `scaleX(1)`;
+    }
+</script>

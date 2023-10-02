@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 9</title>
+</head>
+<body>
+    Altura inicial 
+    <input id="input_altinicial">
+
+    Altura final de seleção
+    <input id="input_final">
+
+    Nome candidato:
+    <input id="input_nome">
+
+    Altura candidato:
+    <input id="input_candidato">
+
+    <button onclick="analisar()">
+        Verificar
+    </button>
+
+    <div id="div_exibir">
+    </div>
+</body>
+</html>
+<script>
+    function analisar() {
+        var altinicio = Number(input_altinicial.value);
+        var altfinal = Number(input_final.value);
+        var nome = input_nome.value;
+        var altcandidato = Number(input_candidato.value);
+
+        if (altinicio > 1 && altfinal > altinicio) {
+            if (altcandidato >= altinicio && altcandidato <= altfinal) {
+                div_exibir.innerHTML += `O candidato ${nome} com altura de ${altcandidato} participará do processo de seleção de piloto`
+            }
+            else {
+                div_exibir.innerHTML += `Infelizmente o candidato ${nome} com altura de ${altcandidato} não atende os requisitos`
+            }
+        } 
+        else {
+            alert(`Insira dados válidos`)
+        }
+    }
+</script>

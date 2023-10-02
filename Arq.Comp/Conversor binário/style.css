@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,700&family=Silkscreen:wght@400;700&display=swap');
+
+body {
+    background-image: url(inovacao-e-tecnologia.jpg);
+    background-size: cover; 
+}
+h1 {
+    font-family: 'Silkscreen';
+    font-weight: 400;
+    color: #ffffff;
+}
+h3 {
+    font-family: "Poppins";
+    color: #ffffff;
+}
+    .demo2 {
+        display: none; background-color: #dcdcdc; border-radius: 5px; padding: 5px; color: rgb(255, 255, 255); width: 15%; height: 40px; font-weight: 500; font-family: 'Poppins';
+        
+    }
+b {
+    color: #ffffff;
+}

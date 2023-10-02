@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="analisar()">Clique em mim</button><br>
+    Cliques: <span id="span_numero">0</span>
+</body>
+</html>
+<script>
+function analisar() {
+   var n=Number(span_numero.innerHTML);
+
+    span_numero.innerHTML = n+1;
+}
+</script>

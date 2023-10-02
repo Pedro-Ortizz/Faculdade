@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="https://img.quizur.com/f/img637255b4a956f6.37791383.jpeg?lastEdited=1668437545"  style="width: 180px;" id="img_p"><br><br>
+    <button onclick="aumentar()">Aumentar largura</button>
+    <button onclick="diminuir()">Diminuir largura</button>
+</body>
+</html>
+<script>
+    
+     var largura = 180
+    
+    function aumentar() {
+        largura += 10
+        img_p.style.width = largura + "px";
+    }
+    function diminuir() {
+        largura -= 10
+        img_p.style.width = largura + "px"
+    }
+</script>

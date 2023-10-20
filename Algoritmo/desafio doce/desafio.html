@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>desafio doce</title>
+</head>
+<body>
+    Informe a quantidade de Macarons a serem vendidos: <br>
+    <input type="number" id="ipt_qtd_macarons"> <br>
+    Informe a quantidade de Brigadeiros Gourmets a serem vendidos: <br>
+    <input type="number" id="ipt_qtd_brigadeiros"> <br>
+    Informe a quantidade de Cupcakes a serem vendidos: <br>
+    <input type="number" id="ipt_qtd_cupcakes"> <br>
+    Informe a quantidade de Cheesecakes a serem vendidos: <br>
+    <input type="number" id="ipt_qtd_cheesecakes"> <br> <br>
+
+    Informe o preço da unidade do Macaron: <br>
+    R$<input type="number" id="ipt_preco_macaron"> <br>
+    Informe o preço da unidade do Brigadeiro Gourmet: <br>
+    R$<input type="number" id="ipt_preco_brigadeiro"> <br>
+    Informe o preço da unidade do Cupcake: <br>
+    R$<input type="number" id="ipt_preco_cupcake"> <br>
+    Informe o preço da unidade do Cheesecake: <br>
+    R$<input type="number" id="ipt_preco_cheesecake"> <br> <br>
+    <img src="" alt="" style="width: 30px;">
+
+    <button onclick="verificarVendas()">
+        Verificar Vendas
+    </button>
+
+    <div id="div_vendas"></div>
+</body>
+</html>
+
+<script>
+    function verificarVendas() {
+        div_vendas.innerHTML = "";
+
+        if (ipt_qtd_macarons.value=="" || Number(ipt_qtd_macarons.value)<0) {
+            div_vendas.innerHTML += `
+            A quantidade de Macarons a serem vendidos deve ser preenchida com um número positivo <br>
+            `; 
+        } else if (ipt_qtd_brigadeiros.value=="" || Number(ipt_qtd_brigadeiros.value)<0) {
+            div_vendas.innerHTML += `
+            A quantidade de Brigadeiros Gourmet a serem vendidos deve ser preenchida com um número positivo <br>
+            `;
+        } else if (ipt_qtd_cupcakes.value=="" || Number(ipt_qtd_cupcakes.value)<0) {
+            div_vendas.innerHTML += `
+            A quantidade de Cupcakes a serem vendidos deve ser preenchida com um número positivo <br>
+            `;
+        } else if (ipt_qtd_cheesecakes.value=="" || Number(ipt_qtd_cheesecakes.value)<0) {
+            div_vendas.innerHTML += `
+            A quantidade de Cheesecakes a serem vendidos deve ser preenchida com um número positivo <br>
+            `;
+        } else if (ipt_preco_macaron.value=="" || Number(ipt_preco_macaron.value)<0) {
+            div_vendas.innerHTML += `
+            O campo preço da unidade do Macaron deve ser preenchido com um número positivo <br>
+            `;
+        } else if (ipt_preco_brigadeiro.value=="" || Number(ipt_preco_brigadeiro.value)<0) {
+            div_vendas.innerHTML += `
+            O campo preço da unidade do Brigadeiro Gourmet deve ser preenchido com um número positivo <br>
+            `;
+        } else if (ipt_preco_cupcake.value=="" || Number(ipt_preco_cupcake.value)<0) {
+            div_vendas.innerHTML += `
+            O campo preço da unidade do Cupcake deve ser preenchido com um número positivo <br>
+            `;
+        }  else if (ipt_preco_cheesecake.value=="" || Number(ipt_preco_cheesecake.value)<0) {
+            div_vendas.innerHTML += `
+            O campo preço da unidade do Cheesecake deve ser preenchido com um número positivo <br>
+            `;
+        } else {
+            var qtdMacaron = Number(ipt_qtd_macarons.value);
+            var qtdBrigadeiro = Number(ipt_qtd_brigadeiros.value);
+            var qtdCupcake = Number(ipt_qtd_cupcakes.value);
+            var qtdCheesecake = Number(ipt_qtd_cheesecakes.value);
+            var totalVendido = qtdMacaron + qtdBrigadeiro + qtdCupcake + qtdCheesecake;
+            var precoMacaron = Number(ipt_preco_macaron.value);
+            var precoBrigadeiro = Number(ipt_preco_brigadeiro.value);
+            var precoCupcake = Number(ipt_preco_cupcake.value);
+            var precoCheesecake = Number(ipt_preco_cheesecake.value);
+            var precoFinal = 0;
+
+            var contador = 1;
+            var venda = 1;
+                while (contador<=qtdMacaron) {
+                    precoFinal += precoMacaron;
+
+                    div_vendas.innerHTML += `
+                    Venda ${venda} - <img style="width: 50px;" src="https://www.sabornamesa.com.br/media/k2/items/cache/d9ea853b1f81f1e599553bf1603f446c_XL.jpg"> - R$${precoMacaron} <br>
+                    `;
+
+                    contador++;
+                    venda++;
+                }
+                contador = 1;
+                while (contador<=qtdBrigadeiro) {
+                    precoFinal += precoBrigadeiro;
+
+                    div_vendas.innerHTML += `
+                    Venda ${venda} - <img style="width: 50px;" src="https://harald.com.br/wp-content/uploads/2020/04/briadeirogormet-melken-700x520-1.jpg"> - R$${precoBrigadeiro} <br>
+                    `;
+
+                    contador++;
+                    venda++;
+                }
+                contador = 1;
+                while (contador<=qtdCupcake) {
+                    precoFinal += precoCupcake;
+
+                    div_vendas.innerHTML += `
+                    Venda ${venda} - <img style="width: 50px;" src="https://static.itdg.com.br/images/1200-675/7534f5bcee2488b51810b7b7d9239eee/89546-original.jpg"> - R$${precoCupcake} <br>
+                    `;
+
+                    contador++;
+                    venda++;
+                }
+                contador = 1;
+                while (contador<=qtdCheesecake) {
+                    precoFinal += precoCheesecake;
+
+                    div_vendas.innerHTML += `<br>
+                    Venda ${venda} - <img style="width: 50px;" src="https://www.receitasnestle.com.br/sites/default/files/srh_recipes/8fafc3935c766bf8c9f1331a325e48a9.jpg"> - R$${precoCheesecake} <br>
+                    `;
+
+                    contador++;
+                    venda++;
+                }
+                
+                div_vendas.innerHTML += `
+                Com a quantidade de ${qtdMacaron} Macarons, ${qtdBrigadeiro} Brigadeiros, ${qtdCupcake} Cupcakes e ${qtdCheesecake} Cheesecakes, a venda totalizará R$${precoFinal.toFixed(2)}
+                `;
+            
+
+                  
+        }
+    }
+</script>

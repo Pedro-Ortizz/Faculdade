@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Quantas cocas você acha que já bebeu na vida?
+    <input type="number" id="input_coca"><br>
+    <button onclick="mostrar()">Ver a quantidade</button><br>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+<script>
+    function mostrar(){
+        var qtd = Number(input_coca.value);
+        var contador = 1;
+        var coca = '<img src="https://4.bp.blogspot.com/-0hfnCLsZR20/Vyez14AgZmI/AAAAAAAAY8o/dYW8_yjVYcscAZWhEItdm1A9aU933uVlwCLcB/s1600/Coca-Cola-2015.jpg" alt="Coca-Cola" style="width: 100px; height: 100px;">';
+        div_mensagem.innerHTML = "";
+
+        while (contador<= qtd) {
+            div_mensagem.innerHTML += `${coca}`;
+            contador += 1;
+        }
+    }
+</script>

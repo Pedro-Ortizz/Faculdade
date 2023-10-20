@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Informe um valor minímo:
+    <input type="number" id="input_minimo"><br>
+    Informe um valor máximo:
+    <input type="number" id="input_maximo"><br>
+    <button onclick="mostrar()">S2 Pares</button><br>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+<script>
+    function mostrar() {
+        var min = Number(input_minimo.value);
+        var max = Number(input_maximo.value);
+        div_mensagem.innerHTML = "";
+
+        while(min <= max) {
+            if(min % 2 == 0) {
+                div_mensagem.innerHTML += `${min}<br>`;
+                
+            }
+            min += 1;
+        }
+    }
+</script>

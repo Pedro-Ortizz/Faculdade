@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Repetição 15</title>
+  </head>
+  <body>
+    Quantidade de elefantes<br />
+    <input type="number" id="input_elefante" /><br />
+    <button onclick="mostrar()">Atazanar a médium</button><br />
+    <div id="div_mensagem2"></div>
+  </body>
+</html>
+
+<script>
+  function mostrar() {
+    var qtd = Number(input_elefante.value);
+    var numero = 1;
+    var frase = `incomodam, `;
+    div_mensagem2.innerHTML = ``;
+    var soma = numero + 1;
+
+    if (qtd == 1){
+      div_mensagem2.innerHTML += `1 elefante incomoda muita gente!<br>`;
+    }
+      while (numero < qtd) { 
+        div_mensagem2.innerHTML += `1 elefante incomoda muita gente!<br>`;
+        frase += `incomodam, `;
+        div_mensagem2.innerHTML += `${soma} elefantes, ${frase} muito mais<br>`;
+        
+        soma += 1;
+        numero += 1;
+        
+      }
+  }
+  </script>

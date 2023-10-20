@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Quantidade de pontos de “Chakra” que o Naruto tem:
+    <input type="number" id="input_chakra"><br>
+    Quantidade de clones desejada:
+    <input type="number" id="input_clone"><br>
+    Quantidade de clones por linha:
+    <input type="number" id="input_linha"><br>
+    <button onclick="mostrar()">Criar clones</button>
+    <div id="div_mensagem"></div>
+    
+    
+</body>
+</html>
+<script>
+    function mostrar(){
+        var chakra = Number(input_chakra.value);
+        var clone = Number(input_clone.value);
+        var linha = Number(input_linha.value);
+        var contador = 1
+        div_mensagem.innerHTML = ""
+        var imgnaruto = ` <img src="naruto.jpg" alt="" style="width: 100px; height: 100px;">`
+        var validclone = clone * 20;
+        var sobraChakra = chakra - validclone;
+
+        if(chakra< 20 || chakra > 5000 || clone < 0 || clone > 250 || linha <1) {
+            alert("ERRO NA ENTRADA DE DADOS - Energia tem que ser entre 20 e 5.000. Quantidade de Clones tem que ser entre 0 e 250. Quantidade de Clones por linha tem que ser maior que 0.") 
+        }else if(chakra<validclone){
+            alert("o item a) tem que ser maior ou igual ao item b) multiplicado por 20. ")
+        }else {
+            while(contador<=linha){
+                div_mensagem.innerHTML += `${imgnaruto}`;
+                contador+=1;
+            } while(contador<=clone){
+                div_mensagem.innerHTML+= `<br>${imgnaruto}`;
+                contador +=1;
+            }
+            div_mensagem.innerHTML += `<br> ANÁLISE DA GERAÇÃO DE CLONES<br>
+
+Chakra Inicial: ${chakra}<br> 
+
+Quantidade de Clones: ${clone}<br>
+
+Sobra de Chakra: ${sobraChakra}<br><br>`
+        }
+        if(sobraChakra > 1000){
+            div_mensagem.innerHTML += `PROVAVELMENTE VOCÊ VAI GANHAR`
+        }else if (sobraChakra > 500) {
+            div_mensagem.innerHTML += `A LUTA VAI SER MUITO BOA`
+        }else {
+            div_mensagem.innerHTML += `TORÇA PARA O ADVERSÁRIO SER FRAQUINHO`
+        }
+    }
+</script>

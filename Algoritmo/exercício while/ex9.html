@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Informe um número:
+    <input type="number" id="input_numero"><br>
+    Informe uma frase:
+    <input type="text" id="input_frase"><br>
+    <button onclick="mostrar()">Papagaio</button>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+<script>
+    function mostrar(){
+        var numero = Number(input_numero.value);
+        var frase = input_frase.value;
+        var contador = 1;
+        div_mensagem.innerHTML = "";
+
+        while(contador<=numero) {
+            div_mensagem.innerHTML += `${frase}<br>`;
+            contador += 1;
+        }
+    }
+</script>

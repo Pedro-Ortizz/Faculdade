@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Quantas xícaras de café com leite já tomou na vida?:
+    <input type="number" id="input_xicara"><br>
+    <button onclick="mostrar()">Ver quantidade</button><br>
+    <div id="div_mensagem"></div>
+    
+</body>
+</html>
+<script>
+    function mostrar() {
+        var contador = 1
+        var qtd = Number(input_xicara.value);
+        div_mensagem.innerHTML = "";
+        var leite = `<img src="https://th.bing.com/th/id/OIP.vza1hksRA7SlgB08HeVubwHaE8?w=259&h=180&c=7&r=0&o=5&dpr=1.1&pid=1.7" alt="" style="width: 100px; height: 100px;">`;
+        var cafe = `<img src="https://www.pestcontrolunlimited.com/wp-content/uploads/2019/02/coffee-grounds.jpg" alt="" style="width: 100px; height: 100px;">`;
+        
+        var colherCafe = qtd * 2;
+
+        while(contador<=qtd) {
+            div_mensagem.innerHTML += `${leite} + `
+            contador +=1;
+        } 
+        
+        contador = 1;
+        while(contador<=colherCafe) {
+            div_mensagem.innerHTML += `${cafe} +`
+            contador +=1
+    }
+    }
+</script>

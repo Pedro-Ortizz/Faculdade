@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Quantos depósitos fez no banco?:
+    <input type="number" id="input_deposito"><br>
+    Informe o valor de cada depósito:
+    <input type="number" id="input_valor"><br>
+    <button onclick="mostrar()">Acompanhar grana</button>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+<script>
+    function mostrar(){
+        var dep = Number(input_deposito.value);
+        var valor = Number(input_valor.value);
+        var contador = 1;
+        div_mensagem.innerHTML = "";
+
+        while(contador<=dep){
+            div_mensagem.innerHTML += `${contador}° Mês: R$${valor * contador}.00<br>`;
+            contador +=1;
+        }
+    }
+</script>
